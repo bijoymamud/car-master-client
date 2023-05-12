@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Service from "../../Service/Service";
+import Service from "../Service/Service";
 
 
 const Services = () => {
@@ -29,6 +29,7 @@ const Services = () => {
                     ></Service>)
                 }
             </div>
+            <div className="text-center">   <button className="btn btn-outline btn-wide  hover:bg-white text-white">More Services</button></div>
 
         </div>
     );
