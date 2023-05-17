@@ -1,13 +1,36 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/Authproviders";
 import img from "../../assets/images/login/login.svg";
 
 const LogIn = () => {
 
+    const { signIn } = useContext(AuthContext)
+
 
     const handleLogin = event => {
         event.preventDefault();
-      
+
+
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(name, email, password, confirm);
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error.message))
+
     }
+
+
+
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
